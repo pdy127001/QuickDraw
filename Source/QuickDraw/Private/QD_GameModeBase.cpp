@@ -49,6 +49,11 @@ void AQD_GameModeBase::DrawGame()
 	}
 }
 
+void AQD_GameModeBase::FinishGame()
+{
+	SetGamePhase(EGamePhase::Finished);
+}
+
 void AQD_GameModeBase::SetGamePhase(EGamePhase Phase)
 {
 	GamePhase=Phase;

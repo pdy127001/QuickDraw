@@ -18,7 +18,7 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	void SetPaperSpriteVisibility(bool visible);
+	void SetPaperSpriteVisibility(bool bVisible);
 	
 protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

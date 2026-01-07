@@ -29,6 +29,8 @@ public:
 	
 	void DrawGame();
 	
+	void FinishGame();
+	
 	void SetGamePhase(EGamePhase Phase);
 	
 public:
