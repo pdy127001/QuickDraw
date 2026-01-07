@@ -25,7 +25,7 @@ protected:
 	UFUNCTION(BlueprintNativeEvent)
 	void PlayAttackAnim();
 	
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
 	void Defeated();
 
 public:	
