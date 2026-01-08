@@ -90,6 +90,16 @@ void ASamurai::Defeated_Implementation()
 	UE_LOG(LogTemp, Log, TEXT("Defeated_Implementation"));
 }
 
+void ASamurai::Reset_Implementation()
+{
+	UE_LOG(LogTemp, Log, TEXT("Reset_Implementation"));
+}
+
+void ASamurai::SetCanAttack()
+{
+	bCanAttack=true;
+}
+
 void ASamurai::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);

@@ -31,6 +31,15 @@ public:
 	
 	void FinishGame();
 	
+	UFUNCTION(BlueprintCallable)
+	void ResetGame();
+	
+	UFUNCTION(BlueprintNativeEvent)
+	void ResetSamurai();
+	
+	UFUNCTION(BlueprintNativeEvent)
+	void AttackAI();
+	
 	void SetGamePhase(EGamePhase Phase);
 	
 public:
@@ -40,6 +49,8 @@ public:
 	FTimerHandle RoundStartTimerHandle;
 	
 	FTimerHandle DrawTimerHandle;
+	
+	FTimerHandle ResetTimerHandle;
 	
 	EGamePhase GamePhase;
 };

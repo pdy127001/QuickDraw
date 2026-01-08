@@ -27,6 +27,12 @@ protected:
 	
 	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
 	void Defeated();
+	
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void Reset();
+	
+	UFUNCTION(BlueprintCallable)
+	void SetCanAttack();
 
 public:	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
