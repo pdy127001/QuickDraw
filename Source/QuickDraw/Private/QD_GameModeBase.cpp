@@ -47,6 +47,42 @@ void AQD_GameModeBase::DrawGame()
 	{
 		Exclamation->SetPaperSpriteVisibility(true);
 	}
+	AttackAI();
+}
+
+void AQD_GameModeBase::FinishGame()
+{
+	SetGamePhase(EGamePhase::Finished);
+	GetWorld()->GetTimerManager().SetTimer(
+		ResetTimerHandle,
+		this,
+		&AQD_GameModeBase::ResetGame,
+		2.0f,
+		false
+		);
+}
+
+void AQD_GameModeBase::ResetGame()
+{
+	SetGamePhase(EGamePhase::Intro);
+	ResetSamurai();
+	GetWorld()->GetTimerManager().SetTimer(
+	RoundStartTimerHandle,
+	this,
+	&AQD_GameModeBase::StartGame,
+	GameStartTime,
+	false
+	);
+}
+
+void AQD_GameModeBase::ResetSamurai_Implementation()
+{
+	UE_LOG(LogTemp, Log, TEXT("ResetSamurai_Implementation"));
+}
+
+void AQD_GameModeBase::AttackAI_Implementation()
+{
+	UE_LOG(LogTemp, Log, TEXT("AttackAI_Implementation"));
 }
 
 void AQD_GameModeBase::SetGamePhase(EGamePhase Phase)

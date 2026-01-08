@@ -16,6 +16,23 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	
+	UFUNCTION(BlueprintCallable)
+	virtual void Attack();
+	
+	virtual void SetCrossVisibility(bool bVisible);
+	
+	UFUNCTION(BlueprintNativeEvent)
+	void PlayAttackAnim();
+	
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void Defeated();
+	
+	UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
+	void Reset();
+	
+	UFUNCTION(BlueprintCallable)
+	void SetCanAttack();
 
 public:	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -25,5 +42,13 @@ protected:
 	USceneComponent* DefaultSceneRoot;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	USceneComponent* AttackPos;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	UPaperSpriteComponent* PaperSprite;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPaperSpriteComponent* Cross;
+	
+	bool bCanAttack;
 };
